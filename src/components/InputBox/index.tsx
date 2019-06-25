@@ -1,46 +1,66 @@
-import React, { FormEvent } from 'react'
+import React from 'react'
 import './style.css'
+import Todo from '../../models/Todo';
+import { addTodo } from '../../actions/todos';
+
+
 
 // Props
 interface Props {
-    handleSubmit: (value:string) => void
 }
 
 // State
 interface State {
-    value: string
+    text: string
+    todo: Todo[]
+    nextId: number
 }
 
 class InputBox extends React.Component<Props, State> {
     
     constructor(props: Props) {
         super(props)
-        this.state = { value: '' } // Value is empty by default
-    }
-
-    _updateValue(value: string) {
-        console.log(value)
-        this.setState({ value })
-    }
-
-    _handleSubmit(e: FormEvent<any>){
-        e.preventDefault()
-        if(!this.state.value.trim()) {
-            return
-        }
-        this.props.handleSubmit(this.state.value) // return text from input
-        this.setState({ value: '' }) // after return text, empties the field
+        this.state = { todo: [], text: '', nextId: 1}
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
     render() {
-        const { value } = this.state
-        const { _updateValue, _handleSubmit } = this
+        const { handleChange, handleSubmit } = this
+        console.log(this.state.todo)
         return(
-            <form onSubmit={_handleSubmit}>
-                <input type="text" name="inputbox" id="inputbox" value={ value } onChange={e => _updateValue(e.target.value)} />
+            <form onSubmit={handleSubmit}>
+                <input type="text" value={this.state.text} onChange={handleChange} name="inputbox" id="inputbox" />
                 <button type="submit">Add Todo</button>
             </form>
         )
     }
+
+    handleChange(e: any) {
+        this.setState({ text: e.target.value });
+        // console.log(e.target.value);
+    }
+
+    handleSubmit(e: any) {
+        e.preventDefault();
+        if (!this.state.text.length) {
+            return;
+        }
+        let temp:number = this.state.nextId
+        temp++
+        const newItem = {
+            id: this.state.todo.length.toString(),
+            text: this.state.text,
+            created: Date.now().toString(), // needed to be convert to date
+            updated: Date.now().toString(), // needed to be convert to date
+            isCompleted: false,
+            urgency: Math.round(Math.random())
+        };
+        this.setState(state => ({
+            todo: state.todo.concat(newItem),
+            text: ''
+        }));
+    }
+    
 }
 
 export default InputBox
