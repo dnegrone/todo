@@ -27,15 +27,13 @@ class InputBox extends React.Component<Props, State> {
         api.get('todos').then(response => {
             this.setState({ unreliableTodo: Object.values(response.data.todos) })
         })
-        
     }
     render() {
         const { handleChange, handleSubmit } = this
-        // console.log(this.state.todo)
         return(
             <div>
                 <form onSubmit={handleSubmit}>
-                    <input type="text" value={this.state.text} onChange={handleChange} name="inputbox" id="inputbox" />
+                    <input autoFocus type="text" value={this.state.text} onChange={handleChange} name="inputbox" id="inputbox" placeholder="add a new todo" />
                     <button type="submit">Add Todo</button>
                 </form>
                 <section className="todo-list">

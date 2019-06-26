@@ -19,6 +19,9 @@ form button:hover {
 form input[type="text"] {
     width: 350px;
 }
+form input[type="text"]:focus {
+    outline: none
+}
 
 /* extra */
 .todo-list ul {
