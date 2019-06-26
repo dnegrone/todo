@@ -38,3 +38,27 @@ form input[type="text"]:focus {
 .todo-list ul li:last-child {
     border-bottom-color: transparent;
 }
+.todo-list ul li .text {
+    text-align: left;
+    width: 350px;
+    display: inline-block;
+}
+.todo-list ul li .button {
+    display: inline-block;
+    text-align: right;
+    width: 160px;
+}
+.todo-list ul li .button button {
+    padding: .6em;
+    border-radius: 6px;
+    background: white;
+    border: none;
+    font-size: .9em;
+    color: #444;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+.todo-list ul li .button button:hover {
+    background: rgba(218, 13, 139, 0.849);
+    color: white;
+}
