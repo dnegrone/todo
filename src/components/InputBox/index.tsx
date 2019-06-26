@@ -1,8 +1,7 @@
 import React from 'react'
 import './style.css'
-import Todo from '../../models/Todo';
-import { addTodo } from '../../actions/todos';
-
+import Todo from '../../models/Todo'
+import api from '../../models/api'
 
 
 // Props
@@ -11,33 +10,62 @@ interface Props {
 
 // State
 interface State {
-    text: string
     todo: Todo[]
+    text: string
     nextId: number
+    unreliableTodo: any
 }
-
 class InputBox extends React.Component<Props, State> {
     
     constructor(props: Props) {
         super(props)
-        this.state = { todo: [], text: '', nextId: 1}
+        this.state = { todo: [], text: '', nextId: 1, unreliableTodo: [] }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
     }
+    componentDidMount(){
+        api.get('todos').then(response => {
+            this.setState({ unreliableTodo: Object.values(response.data.todos) })
+        })
+        
+    }
     render() {
         const { handleChange, handleSubmit } = this
-        console.log(this.state.todo)
+        // console.log(this.state.todo)
         return(
-            <form onSubmit={handleSubmit}>
-                <input type="text" value={this.state.text} onChange={handleChange} name="inputbox" id="inputbox" />
-                <button type="submit">Add Todo</button>
-            </form>
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <input type="text" value={this.state.text} onChange={handleChange} name="inputbox" id="inputbox" />
+                    <button type="submit">Add Todo</button>
+                </form>
+                <section className="todo-list">
+                    <ul>
+                        {this.state.unreliableTodo.map((todo: any) => (
+                            <li key={todo.id}>
+                                {todo.text}
+                                {/* <div>
+                                    <button onClick={() => toggleTodo(todo.id)}>Toggle</button>
+                                    <button onClick={() => removeTodo(todo.id)}>Remove</button>
+                                </div> */}
+                            </li>
+                        ))}
+                        {this.state.todo.map((t: any) => (
+                            <li key={t.id}>
+                                {t.text}
+                                {/* <div>
+                                    <button onClick={() => toggleTodo(todo.id)}>Toggle</button>
+                                    <button onClick={() => removeTodo(todo.id)}>Remove</button>
+                                </div> */}
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            </div>
         )
     }
-
+    
     handleChange(e: any) {
         this.setState({ text: e.target.value });
-        // console.log(e.target.value);
     }
 
     handleSubmit(e: any) {
@@ -45,8 +73,6 @@ class InputBox extends React.Component<Props, State> {
         if (!this.state.text.length) {
             return;
         }
-        let temp:number = this.state.nextId
-        temp++
         const newItem = {
             id: this.state.todo.length.toString(),
             text: this.state.text,
