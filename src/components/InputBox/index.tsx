@@ -1,4 +1,8 @@
 import React from 'react'
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { getTodos } from '../../selectors/todos'
+import { toggleTodo } from '../../actions/todos'
 import './style.css'
 import Todo from '../../models/Todo'
 import api from '../../models/api'
@@ -29,7 +33,7 @@ class InputBox extends React.Component<Props, State> {
         })
     }
     render() {
-        const { handleChange, handleSubmit } = this
+        const { handleChange, handleSubmit, removeTodo } = this
         return(
             <div>
                 <form onSubmit={handleSubmit}>
@@ -41,9 +45,9 @@ class InputBox extends React.Component<Props, State> {
                         {this.state.unreliableTodo.map((todo: any) => (
                             <li key={todo.id}>
                                 {todo.text}
+                                <button onClick={() => removeTodo(todo.id)}>Remove</button>
                                 {/* <div>
                                     <button onClick={() => toggleTodo(todo.id)}>Toggle</button>
-                                    <button onClick={() => removeTodo(todo.id)}>Remove</button>
                                 </div> */}
                             </li>
                         ))}
@@ -83,6 +87,15 @@ class InputBox extends React.Component<Props, State> {
             todo: state.todo.concat(newItem),
             text: ''
         }));
+        api.post('todos', this.state.todo).then(response => {
+            console.log(response);
+        })
+    }
+
+    removeTodo(todoId:string) {
+        // api.delete(`todos/${todoId}`).then(response => {
+        //     console.log(response);
+        // })
     }
     
 }
