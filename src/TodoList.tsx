@@ -28,6 +28,8 @@ class TodoList extends Component<Props, State> {
         this.state = { todo: [], text: '', nextId: Date.now().toString(), unreliableTodo: [] }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.toggleTodo = this.toggleTodo.bind(this)
+        this.toggleUnreliableTodo = this.toggleUnreliableTodo.bind(this)
         this.removeTodo = this.removeTodo.bind(this)
     }
     componentDidMount(){
@@ -60,21 +62,32 @@ class TodoList extends Component<Props, State> {
     handleChange(e: any) {
         this.setState({ text: e.target.value });
     }
+    toggleUnreliableTodo = (index: number, e: any) => {
+        const todo = Object.assign([], this.state.unreliableTodo)
+        if(this.state.unreliableTodo[index].id === todo[index].id) {
+            todo[index].isCompleted = !todo[index].isCompleted
+        }
+        this.setState({ unreliableTodo: todo })
+    }
+    toggleTodo = (index: number, e: any) => {
+        const todo = Object.assign([], this.state.todo)
+        if(this.state.todo[index] === todo[index]) {
+            this.state.todo[index].isCompleted = !this.state.todo[index].isCompleted
+        }
+        this.setState({ todo: todo })
+    }
     removeTodo = (index: number, e: any) => {
-        // () => this.state.unreliableTodo.splice(index,1)
         const todo = Object.assign([], this.state.todo)
         todo.splice(index, 1)
         this.setState({ todo: todo })
     }
     removeUnreliableTodo = (index: number, e: any) => {
-        // () => this.state.unreliableTodo.splice(index,1)
         const todo = Object.assign([], this.state.unreliableTodo)
         todo.splice(index, 1)
         this.setState({ unreliableTodo: todo })
     }
     render() {
         const { handleChange, handleSubmit} = this
-        const { todos, toggleTodo, removeTodo } = this.props;
         return(
             <div>
                 <form onSubmit={handleSubmit}>
@@ -85,22 +98,20 @@ class TodoList extends Component<Props, State> {
                     <ul>
                         {this.state.unreliableTodo.map((todo: any, index: number) => (
                             <li key={todo.id}>
-                                <span className="text">{todo.text}</span>
-                                <span className="button"><button onClick={this.removeUnreliableTodo.bind(this,index)}>Remove</button></span>
-                                {/* <div>
-                                    <button onClick={() => removeTodo(todo)}>Remove</button>
-                                    <button onClick={() => toggleTodo(todo.id)}>Toggle</button>
-                                </div> */}
+                                <span className="text">{todo.isCompleted ? <s>{todo.text}</s> : todo.text}</span>
+                                <div className="button">
+                                    <button onClick={this.toggleUnreliableTodo.bind(this, index)}>Toggle</button>
+                                    <button onClick={this.removeUnreliableTodo.bind(this,index)}>Remove</button>
+                                </div>
                             </li>
                         ))}
                         {this.state.todo.map((todo: any, index: number) => (
                             <li key={todo.id}>
-                                <span className="text">{todo.text}</span>
-                                <span className="button"><button onClick={this.removeTodo.bind(this,index)}>Remove</button></span>
-                                
-                                {/* <div>
-                                    <button onClick={() => toggleTodo(todo.id)}>Toggle</button>
-                                </div> */}
+                                <span className="text">{todo.isCompleted ? <s>{todo.text}</s> : todo.text}</span>
+                                <div className="button">
+                                    <button onClick={this.toggleTodo.bind(this, index)}>Toggle</button>
+                                    <button onClick={this.removeTodo.bind(this,index)}>Remove</button>
+                                </div>
                             </li>
                         ))}
                     </ul>

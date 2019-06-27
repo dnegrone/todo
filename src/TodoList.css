@@ -57,6 +57,10 @@ form input[type="text"]:focus {
     color: #444;
     cursor: pointer;
     transition: all .25s ease;
+    margin-left: 5px;
+}
+.todo-list ul li .button button:first-child {
+    margin-left: 0px;
 }
 .todo-list ul li .button button:hover {
     background: rgba(218, 13, 139, 0.849);
