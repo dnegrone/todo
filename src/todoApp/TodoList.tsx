@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { Creators as TodoActions } from "./store/ducks/todos";
+import { Creators as TodoActions } from "../store/ducks/todos";
 
-import { Todo } from './store/ducks/todos';
-import api from './store/ducks/api'
+import { Todo } from '../store/ducks/todos';
+import api from '../store/ducks/api'
 import './TodoList.css'
 
 
@@ -74,7 +74,7 @@ class TodoList extends Component<Props, State> {
         if(this.state.todo[index] === todo[index]) {
             this.state.todo[index].isCompleted = !this.state.todo[index].isCompleted
         }
-        this.setState({ todo: todo })
+        
     }
     removeTodo = (index: number, e: any) => {
         const todo = Object.assign([], this.state.todo)
