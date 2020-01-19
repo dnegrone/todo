@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/pages/index.js"],"names":[],"mappings":"2FAAA,gCACe,4BAAM","file":"component---src-pages-index-js-aad1483bf354369af6d1.js","sourcesContent":["import React from \"react\"\nexport default () => <h1>Hello Gatsby!</h1>"],"sourceRoot":""}
