@@ -18,13 +18,17 @@
   },
   "homepage": "https://github.com/dnegrone/todo#readme",
   "dependencies": {
-    "gatsby": "^2.18.23",
-    "gatsby-plugin-react-helmet": "^3.1.21",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.10",
+    "gatsby": "^2.22.18",
+    "gatsby-plugin-react-helmet": "^3.3.3",
+    "gatsby-plugin-react-svg": "^3.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^5.2.1",
+    "uikit": "^3.5.3"
   },
-  "devDependencies": {
-    "uikit": "^3.2.7"
-  }
+  "devDependencies": {}
 }

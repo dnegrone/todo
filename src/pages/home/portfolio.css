@@ -1,0 +1,14 @@
+.portfolio header {
+    border-left: solid 16px #B3B3B3;
+    padding-left: 50px;
+    margin-bottom: 100px;
+}
+.portfolio h2, .portfolio h3 {
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}
+.portfolio h3 {
+    letter-spacing: -0.025rem;
+    color: #666;
+}

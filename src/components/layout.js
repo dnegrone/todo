@@ -1,9 +1,9 @@
 import React from "react"
-import Meta from "../components/meta"
+import Head from "../components/head"
 
 export default ({ children }) => (
   <>
-    <Meta />
+    <Head />
     {children}
   </>
 )

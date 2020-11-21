@@ -1,0 +1,52 @@
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-ExtraLight.ttf") format("truetype");
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+body, .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h1, h2, h3, h4, h5, h6 {
+    font-family: "Inter", -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h1, h2, h3, h4, h5, h6 {
+    /* letter-spacing: -0.075rem; */
+}
+
+.section-title {
+    font-weight: 700;
+}
+.section-title em {
+    font-style: normal;
+    font-weight: 200;
+    color: #3c3c3c;
+    margin-right: 6px;
+}
+.section-title::before {
+    /* display: block;
+    float: left; */
+    display: inline-block;
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 40px;
+    border-top: solid 3px #14e371;
+    margin: -16px 0 0 0px;
+}

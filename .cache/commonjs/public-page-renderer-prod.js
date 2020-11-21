@@ -19,10 +19,12 @@ const ProdPageRenderer = ({
     return null;
   }
 
-  return _react.default.createElement(_pageRenderer.default, Object.assign({
-    location,
-    pageResources
-  }, pageResources.json));
+  return (/*#__PURE__*/_react.default.createElement(_pageRenderer.default, {
+      location,
+      pageResources,
+      ...pageResources.json
+    })
+  );
 };
 
 ProdPageRenderer.propTypes = {
