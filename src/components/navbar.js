@@ -4,23 +4,32 @@ import "./navbar.css"
 
 const Navbar = () => (
     <>
-        <nav class="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
-            <div class="uk-navbar-left">
+        <nav className="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
+            <div className="uk-navbar-left">
                 <Link to="/" className="brand">
                     <h1>A.</h1>
                 </Link>
             </div>
-            <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav">
-                    <li><Link to="/#sobre" data-uk-scroll><em>01.</em> Sobre</Link></li>
-                    <li><Link to="/#experiencia" data-uk-scroll><em>02.</em> Experiência</Link></li>
-                    <li><Link to="/#portfolio" data-uk-scroll><em>03.</em> Portfólio</Link></li>
-                    <li><Link to="/#servicos" data-uk-scroll><em>04.</em> Serviços</Link></li>
-                    <li><Link to="/#contato" data-uk-scroll><em>05.</em> Contato</Link></li>
-                    <li><Link to="/#curriculum"><span className="curriculum">Curriculum</span></Link></li>
-                </ul>
+            <div className="uk-navbar-right">
+                <button className="uk-button uk-button-link uk-margin-small-right" type="button" data-uk-toggle="target: #offcanvas-usage"><span data-uk-navbar-toggle-icon></span></button>
             </div>
         </nav>
+
+        <div id="offcanvas-usage" data-uk-offcanvas="overlay: true; flip: true">
+            <div className="uk-offcanvas-bar uk-flex uk-flex-column">
+                <button className="uk-offcanvas-close" type="button" data-uk-close></button>
+
+
+                <ul className="uk-nav uk-nav-default uk-nav-center uk-margin-auto-vertical">
+                    <li><Link to="/" data-uk-scroll>Home</Link></li>
+                    <li><Link to="/#sobre" data-uk-scroll>Sobre</Link></li>
+                    <li><Link to="/#servicos" data-uk-scroll>Serviços</Link></li>
+                    <li><Link to="/#portfolio" data-uk-scroll>Portfolio</Link></li>
+                    <li><Link to="/#contato">Contato</Link></li>
+                </ul>
+
+            </div>
+        </div>
     </>
 )
 

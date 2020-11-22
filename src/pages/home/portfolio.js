@@ -8,15 +8,10 @@ import CapaKawasaki from "../../images/capa_kawasaki.png"
 const HomePortfolio = () => (
     <>
         <div className="uk-section portfolio">
-            <header>
-                <h2 className="uk-heading-medium" data-uk-scrollspy="cls: uk-animation-slide-top-small; repeat: true; delay: 250">Portfolio</h2>
-                <h3 className="uk-h3" data-uk-scrollspy="cls: uk-animation-slide-bottom-small; repeat: true; delay: 250">Conheça um pouco sobre os meus trabalhos.</h3>
-            </header>
-            
-            <div className="uk-container uk-width-3-4" data-uk-slideshow="animation: pull">
+            <div className="uk-width-1-1" data-uk-slideshow="animation: slide">
 
                 <div className="uk-position-relative uk-visible-toggle uk-light">
-                    <ul className="uk-slideshow-items">
+                    <ul className="uk-slideshow-items" uk-height-viewport="offset-top: true; offset-bottom: 30">
                         <li>
                             <div class="uk-position-cover uk-inline-clip uk-transition-toggle">
                                 <img src={CapaPetrobras} alt="Localizador de Pessoas @ Petrobras" data-uk-cover />

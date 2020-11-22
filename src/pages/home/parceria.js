@@ -1,15 +1,16 @@
 import React from "react"
 import "./parceria.css"
-import LogoEmpresas from "../../images/logos_empresas.png"
 
 const Parceria = () => (
     <>
-        <div className="uk-section uk-section-default uk-section-large parceria">
-            <div className="uk-container">
-                <h2 className="uk-heading-medium">Uma questão de confiança e parceria.</h2>
-                <h3 className="uk-h2">Algumas empresas que confiaram em mim em mais de 20 anos de carreira.</h3>
-                <img src={LogoEmpresas} alt="Nunca se veja como um empregado. Sempre se veja como um parceiro. Vá e dê o seu melhor." />
-            </div>
+        <div className="uk-container uk-padding-large">
+            <h2>Eu uso o design para</h2>
+            <ul className="uk-list">
+                <li>Resolver problemas críticos</li>
+                <li>Melhorar a UX de produtos e serviços</li>
+                <li>Conectar pessoas</li>
+                <li>Fazer o bem</li>
+            </ul>
         </div>
     </>
 )

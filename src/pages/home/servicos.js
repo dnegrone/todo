@@ -4,68 +4,63 @@ import FotoServicos from "../../images/criacao-de-sites.png"
 
 const HomeServicos = () => (
     <>
-        <div id="servicos" className="uk-section uk-section-large servicos">
-            <header>
+        <div className="uk-section">
+            {/* <header>
                 <h2 className="uk-heading-medium" data-uk-scrollspy="cls: uk-animation-slide-top-small; repeat: true; delay: 250">Serviços</h2>
                 <h3 className="uk-h3" data-uk-scrollspy="cls: uk-animation-slide-bottom-small; repeat: true; delay: 250">Veja o que eu posso fazer por você hoje.</h3>
-            </header>
-            <div className="uk-flex uk-flex-center uk-flex-middle" data-uk-grid>
-                <div className="uk-width-1-2">
-                    <img src={FotoServicos} alt="Criação de Sites" />
+            </header> */}
+            <div className="uk-flex uk-flex-middle" data-uk-grid>
+                <div className="uk-width-1-3 uk-hidden@s uk-hidden-touch">
+                    <img src={FotoServicos} alt="Criação de Sites" className="uk-width-large" />
                 </div>
-                <div className="uk-width-1-2 uk-container uk-container-xsmall">
+                <div className="uk-container uk-container-xsmall uk-align-left">
                     <ul data-uk-accordion>
                         <li>
-                            <h4 class="uk-accordion-title">Criação de Sites</h4>
+                            <div className="uk-accordion-title">(Re)Design de Sites</div>
                             <div class="uk-accordion-content">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                Todos os sites são responsivos. O conteúdo pode ser estático ou utilizando CMS, como WordPress, por exemplo.
                             </div>
                         </li>
                         <li>
-                            <h4 class="uk-accordion-title">Criação de Logotipos</h4>
+                            <div className="uk-accordion-title">Design de Apps</div>
                             <div class="uk-accordion-content">
-                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor reprehenderit.</p>
+                                Design e prototipação de Apps. Figma, Sketch, Adobe XD.
                             </div>
                         </li>
                         <li>
-                            <h4 class="uk-accordion-title">Design para Social Media</h4>
+                            <div className="uk-accordion-title">Design para Social Media</div>
                             <div class="uk-accordion-content">
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+                                Posts e Stories para Instagram e Facebook. Além de todas as outras mídias sociais.
                             </div>
                         </li>
                         <li>
-                            <h4 class="uk-accordion-title">Serviços de Design Gráfico</h4>
+                            <div className="uk-accordion-title">Serviços de Design Gráfico</div>
                             <div class="uk-accordion-content">
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+                                Papelaria, cartões de visita impressos e virtuais (para WhatsApp e Telegram), Flyers, Folders, Embalagens, etc.
                             </div>
                         </li>
                         <li>
-                            <h4 class="uk-accordion-title">Design de Apps</h4>
+                            <div className="uk-accordion-title">Identidade Visual Corporativa</div>
                             <div class="uk-accordion-content">
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+                                Branding completo ou serviços individuais como Criação de Logotipo, Manual da Marca, Assinaturas, etc. 
                             </div>
                         </li>
                         <li>
-                            <h4 class="uk-accordion-title">Identidade Visual Corporativa</h4>
+                            <div className="uk-accordion-title">Edição de imagens</div>
                             <div class="uk-accordion-content">
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+                                Edição de imagem em nível profissional para fotógrafos ou agências de design.
                             </div>
                         </li>
                         <li>
-                            <h4 class="uk-accordion-title">Edição de imagens</h4>
+                            <div className="uk-accordion-title">Consultoria em UX Design</div>
                             <div class="uk-accordion-content">
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <h4 class="uk-accordion-title">Consultoria em UX Design</h4>
-                            <div class="uk-accordion-content">
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat proident.</p>
+                                Melhoria de sistemas e aplicações/aplicativos web. Treinamento de equipe. Desenvolvimento Front End de interfaces.
                             </div>
                         </li>
                     </ul>
                 </div>
             </div>
+            <div id="servicos"></div>
         </div>
     </>
 )

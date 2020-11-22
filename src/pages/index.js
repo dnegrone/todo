@@ -11,12 +11,12 @@ import HeroBackground from "../images/alex_patagonia.jpg"
 
 const IndexPage = () => (
   <Layout>
-    <div className="uk-background-blend-color-burn uk-background-primary uk-background-primary uk-background-cover" style={{backgroundImage: `url(${HeroBackground})`}}>
-      <Navbar />
-      <HomeHero />
-    </div>
+    <Navbar />
+    <HomeHero />
+    {/* <div className="uk-background-blend-color-burn uk-background-primary uk-background-primary uk-background-cover" style={{backgroundImage: `url(${HeroBackground})`}}>
+    </div> */}
     <HomeParceria />
-    <HomeSobre />
+    {/* <HomeSobre /> */}
     <HomeServicos />
     <HomePortfolio />
   </Layout>
