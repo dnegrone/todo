@@ -1,9 +1,0 @@
-.uk-accordion-title {
-    cursor: pointer;
-}
-.uk-accordion-title::before {
-    float: left !important;
-}
-.uk-accordion-content {
-    padding-left: 38px;
-}

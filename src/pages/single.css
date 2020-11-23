@@ -1,0 +1,62 @@
+/* Nav */
+.uk-navbar-right button {
+    margin-top: -20px;
+}
+.uk-navbar-right svg {
+    color: #444;
+}
+.brand:hover {
+    text-decoration: none;
+}
+.brand h1 {
+    font-size: 3rem;
+    font-weight: 900;
+}
+.uk-offcanvas-bar {
+    background: #fff;
+}
+.uk-offcanvas-bar .uk-nav li a, .uk-offcanvas-bar .uk-offcanvas-close {
+    color: #444 !important;
+    border: solid 1px transparent;
+    display: inline-block;
+    transition: all .15s ease-in-out;
+}
+.uk-offcanvas-bar .uk-nav li a:hover {
+    border-bottom: solid 1px #444;
+}
+
+/* About */
+.avatar {
+    border-radius: 0 20% 0 20%;
+    max-width: 192px;
+    max-height: 192px;
+    border: solid 8px rgba(255,255,255,0); /* fake border */
+    transition: all 2s ease-in-out;
+}
+@media (max-width:768px) {
+    .avatar {
+        border-radius: 50%;
+    }
+}
+h4.uk-margin-small-top {
+    margin-top: 5px !important;
+}
+
+/* Services */
+.services .uk-heading-small {
+    color: #66f;
+}
+
+/* Featured Works */
+.featured-works h4, .featured-works h5 {
+    background: rebeccapurple;
+    color: #fff;
+    padding: 10px;
+    font-weight: 700;
+    margin-top: 10px !important;
+}
+.featured-works h5 {
+    background: #d4af37;
+    display: inline-block;
+    margin-top: 0 !important;
+}
